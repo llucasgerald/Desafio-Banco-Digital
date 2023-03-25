@@ -4,9 +4,9 @@ public class ContaPoupanca extends Conta {
         super(cliente);
     }
 
-    public void imprimirExtrato() {
-        System.out.println("*** Extrato Conta Poupanca ***");
-        super.imprimirinfo();
+    public String imprimirExtrato() {
+        super.imprimirinfo2();
 
+        return null;
     }
 }

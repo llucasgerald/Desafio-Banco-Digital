@@ -1,3 +1,7 @@
+import javax.swing.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public abstract class Conta implements IConta {
 
 private static final int agenciapadrao = 0001 ;
@@ -47,12 +51,28 @@ private static int sequencial = 1 ;
     }
 
 
+    LocalDate Data = LocalDate.now();
+    LocalTime Hora = LocalTime.now();
 
-    protected void imprimirinfo() {
-        System.out.println(String.format("Titular: %s",this.cliente.getnome()));
-        System.out.println(String.format("Agencia: %d",this.agencia));
-        System.out.println(String.format("Conta: %d",this.numeroConta));
-        System.out.println(String.format("Saldo: %.2f",this.saldo));
+    protected void imprimirinfo1() {
+       JOptionPane.showMessageDialog(null, "*** Extrato Conta Corrente *** " +
+               "\n" + (String.format("Titular: %s",this.cliente.getnome())) +
+               "\n" + (String.format("Agencia: %d",this.agencia)) +
+               "\n" + (String.format("Conta: %d",this.numeroConta)) +
+               "\n" + (String.format("Saldo: %.2f",this.saldo)) +
+               "\n" + "Data: " + Data + "\n" + "Hora: " + Hora );
+
+    }
+
+    protected void imprimirinfo2() {
+        JOptionPane.showMessageDialog(null, "*** Extrato Conta Poupanca ***" +
+                "\n" + (String.format("Titular: %s",this.cliente.getnome())) +
+                "\n" + (String.format("Agencia: %d",this.agencia)) +
+                "\n" + (String.format("Conta: %d",this.numeroConta)) +
+                "\n" + (String.format("Saldo: %.2f",this.saldo)) +
+                "\n" + "Data: " + Data + "\n" + "Hora: " + Hora );
+
     }
 }
+
 
